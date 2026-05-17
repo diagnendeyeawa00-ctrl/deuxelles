@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deux Elles — Drop 1 Collection Tabaski</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#FFFFFF;color:#1A1A1A;font-family:'Cormorant Garamond',Georgia,serif;min-height:100vh}
+.page{max-width:480px;margin:0 auto;background:#FFFFFF}
+.hero{padding:2.5rem 1.5rem 2rem;text-align:center;border-bottom:0.5px solid #E8E8E4}
+.brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:300;font-style:italic;color:#1A1A1A;letter-spacing:8px}
+.tagline{font-family:'Montserrat',Arial,sans-serif;font-size:9px;letter-spacing:7px;color:#8CB8A2;text-transform:uppercase;margin-top:6px;font-weight:300}
+.hero-sep{width:40px;height:0.5px;background:#8CB8A2;margin:1.25rem auto}
+.hero-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-style:italic;font-weight:300;color:#1A1A1A;margin-bottom:0.4rem}
+.hero-sub{font-family:'Montserrat',Arial,sans-serif;font-size:9px;color:#A0A09A;letter-spacing:5px;text-transform:uppercase;font-weight:300}
+.badge-pill{display:inline-block;background:#FFFFFF;color:#8CB8A2;font-family:'Montserrat',Arial,sans-serif;font-size:10px;padding:6px 20px;border-radius:20px;border:0.5px solid #8CB8A2;margin-top:1.25rem;letter-spacing:3px;font-weight:300}
+.steps{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:1.75rem}
+.dot{width:24px;height:24px;border-radius:50%;border:0.5px solid #E0E0DA;display:flex;align-items:center;justify-content:center;font-size:10px;color:#C0C0BA;font-family:'Montserrat',Arial,sans-serif;font-weight:300}
+.dot.on{border-color:#8CB8A2;color:#8CB8A2}
+.dot.done{background:#8CB8A2;border-color:#8CB8A2;color:#FFF}
+.sline{width:28px;height:0.5px;background:#E0E0DA}
+.sec{padding:2rem 1.5rem}
+.sec-label{font-family:'Montserrat',Arial,sans-serif;font-size:9px;letter-spacing:5px;color:#8CB8A2;text-transform:uppercase;margin-bottom:1.25rem;font-weight:300}
+.divider{height:0.5px;background:#F0F0EC;margin:1.75rem 0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.card{background:#FAFAFA;border:0.5px solid #EAEAE6;border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color 0.2s}
+.card:hover{border-color:#8CB8A2}
+.card.on{border:1px solid #8CB8A2;background:#F5FBF8}
+.card-fig{width:100%;aspect-ratio:3/4;background:#F5F5F2;display:flex;align-items:flex-end;justify-content:center}
+.card-body{padding:0.875rem}
+.card-code{font-family:'Montserrat',Arial,sans-serif;font-size:9px;letter-spacing:3px;color:#8CB8A2;text-transform:uppercase;font-weight:300}
+.card-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-style:italic;font-weight:300;color:#1A1A1A;margin:4px 0}
+.card-px{font-family:'Montserrat',Arial,sans-serif;font-size:11px;color:#A0A09A;font-weight:300}
+.card-px b{color:#5A9A7A;font-weight:400}
+.tailles{display:flex;gap:5px;margin-top:8px}
+.t{padding:5px 12px;border:0.5px solid #EAEAE6;border-radius:4px;color:#A0A09A;cursor:pointer;font-family:'Montserrat',Arial,sans-serif;font-size:11px;background:#FFF;font-weight:300}
+.t:hover{border-color:#8CB8A2;color:#5A9A7A}
+.t.on{border:1px solid #8CB8A2;color:#5A9A7A;background:#F5FBF8}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:0.5rem}
+.chip{font-family:'Montserrat',Arial,sans-serif;font-size:10px;padding:5px 13px;border:0.5px solid #EAEAE6;border-radius:20px;color:#A0A09A;cursor:pointer;background:#FAFAFA;font-weight:300;letter-spacing:1px}
+.chip:hover{border-color:#8CB8A2;color:#5A9A7A}
+.chip.on{border-color:#8CB8A2;color:#5A9A7A;background:#F5FBF8}
+.err{font-family:'Montserrat',Arial,sans-serif;font-size:11px;color:#A32D2D;margin-top:1rem;padding:10px 14px;background:#FEF0F0;border-radius:8px;border:0.5px solid #F09595;display:none;font-weight:300}
+.btn-main{width:100%;background:#8CB8A2;border:none;border-radius:8px;padding:14px;color:#FFFFFF;font-family:'Montserrat',Arial,sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;cursor:pointer;margin-top:1.25rem;font-weight:300}
+.btn-main:hover{background:#7AAE92}
+.btn-back{width:100%;background:transparent;border:none;color:#C0C0BA;font-family:'Montserrat',Arial,sans-serif;font-size:10px;margin-top:0.875rem;cursor:pointer;letter-spacing:2px;font-weight:300}
+.recap-box{background:#F5FBF8;border:0.5px solid #C8DDD5;border-radius:10px;padding:1.1rem;margin-bottom:1.5rem}
+.recap-label{font-family:'Montserrat',Arial,sans-serif;font-size:9px;letter-spacing:3px;color:#8CB8A2;text-transform:uppercase;margin-bottom:6px;font-weight:300}
+.recap-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-style:italic;font-weight:300;color:#5A9A7A;line-height:1.6}
+.field{margin-bottom:1rem}
+.field label{display:block;font-family:'Montserrat',Arial,sans-serif;font-size:9px;letter-spacing:3px;color:#A0A09A;text-transform:uppercase;margin-bottom:6px;font-weight:300}
+.field input{width:100%;background:#FAFAFA;border:0.5px solid #EAEAE6;border-radius:8px;padding:11px 14px;color:#1A1A1A;font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;outline:none;font-weight:300}
+.field input:focus{border-color:#8CB8A2;background:#F5FBF8}
+.req{color:#8CB8A2}
+.note-txt{font-family:'Montserrat',Arial,sans-serif;font-size:10px;color:#B0B0AA;line-height:1.9;margin:1rem 0;padding:1rem;background:#FAFAFA;border-radius:8px;border:0.5px solid #F0F0EC;font-weight:300}
+.confirm-box{background:#F5FBF8;border:0.5px solid #8CB8A2;border-radius:16px;padding:2.5rem 1.5rem;text-align:center}
+.conf-mark{width:54px;height:54px;border-radius:50%;background:#8CB8A2;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.conf-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-style:italic;font-weight:300;color:#1A1A1A;margin-bottom:0.5rem}
+.conf-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:300;color:#5A9A7A;margin-bottom:1rem}
+.conf-txt{font-family:'Montserrat',Arial,sans-serif;font-size:11px;color:#7A7A74;line-height:1.9;font-weight:300}
+.conf-detail{font-family:'Montserrat',Arial,sans-serif;font-size:10px;color:#8CB8A2;margin-top:1rem;letter-spacing:1px;line-height:1.7;padding-top:1rem;border-top:0.5px solid #C8DDD5;font-weight:300}
+.conf-sep{margin-top:1.25rem;padding-top:1rem;border-top:0.5px solid #C8DDD5}
+.conf-insta-label{font-family:'Montserrat',Arial,sans-serif;font-size:9px;color:#B0B0AA;letter-spacing:4px;text-transform:uppercase;font-weight:300}
+.conf-insta{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-style:italic;font-weight:300;color:#8CB8A2;margin-top:5px}
+.footer{padding:2rem 1.5rem;text-align:center;border-top:0.5px solid #EAEAE6;margin-top:1rem}
+.footer-brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:300;color:#8CB8A2;letter-spacing:6px}
+.footer-sub{font-family:'Montserrat',Arial,sans-serif;font-size:9px;color:#C0C0BA;letter-spacing:5px;text-transform:uppercase;margin-top:6px;font-weight:300}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="hero">
+  <div style="margin:0 auto 1.5rem">
+    <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="100" fill="#8CB8A2"/>
+      <g transform="translate(38, 52)">
+        <rect x="0" y="0" width="8" height="96" fill="white"/>
+        <rect x="0" y="0" width="54" height="8" fill="white"/>
+        <rect x="0" y="44" width="42" height="6" fill="white"/>
+        <rect x="0" y="88" width="54" height="8" fill="white"/>
+        <rect x="42" y="4" width="14" height="14" fill="#8CB8A2"/>
+        <rect x="42" y="74" width="14" height="14" fill="#8CB8A2"/>
+        <polygon points="60,48 70,38 80,48 70,58" fill="white"/>
+        <polygon points="60,48 70,40 80,48 70,56" fill="#8CB8A2"/>
+        <rect x="116" y="0" width="8" height="96" fill="white"/>
+        <rect x="70" y="0" width="54" height="8" fill="white"/>
+        <rect x="82" y="44" width="42" height="6" fill="white"/>
+        <rect x="70" y="88" width="54" height="8" fill="white"/>
+        <rect x="68" y="4" width="14" height="14" fill="#8CB8A2"/>
+        <rect x="68" y="74" width="14" height="14" fill="#8CB8A2"/>
+      </g>
+      <line x1="45" y1="158" x2="155" y2="158" stroke="white" stroke-width="1" opacity="0.6"/>
+      <text x="100" y="178" font-family="Arial" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="8">DEUX ELLES</text>
+    </svg>
+  </div>
+  <div class="brand">Deux Elles</div>
+  <div class="tagline">Paris × Dakar · Maison de mode</div>
+  <div class="hero-sep"></div>
+  <div class="hero-title">Drop 1 — Collection Tabaski</div>
+  <div class="hero-sub">Édition limitée · 25 pièces seulement</div>
+  <div class="badge-pill">À partir de 45€</div>
+  <div class="steps">
+    <div class="dot on" id="d1">1</div><div class="sline"></div>
+    <div class="dot" id="d2">2</div><div class="sline"></div>
+    <div class="dot" id="d3">3</div>
+  </div>
+</div>
+
+<div id="pg1">
+  <div class="sec">
+    <div class="sec-label">1. Choisissez votre modèle</div>
+    <div class="cards">
+      <div class="card" id="m-e01" onclick="pickModel('E01','Ensemble Bogolan','65')">
+        <div class="card-fig">
+          <svg viewBox="0 0 100 140" width="85" height="119">
+            <ellipse cx="50" cy="22" rx="15" ry="18" fill="#9A7055"/>
+            <ellipse cx="50" cy="15" rx="15" ry="9" fill="#2A1A0A"/>
+            <rect x="43" y="38" width="14" height="12" fill="#9A7055"/>
+            <path d="M18 48 Q50 45 82 48 L86 132 Q50 136 14 132 Z" fill="#C8960B"/>
+            <rect x="26" y="55" width="4" height="74" fill="#1A1A0A" opacity="0.5"/>
+            <rect x="40" y="55" width="3" height="74" fill="#1A1A0A" opacity="0.3"/>
+            <rect x="54" y="55" width="4" height="74" fill="#1A1A0A" opacity="0.5"/>
+            <rect x="68" y="55" width="3" height="74" fill="#1A1A0A" opacity="0.3"/>
+            <polygon points="16,68 34,68 25,79" fill="#1A1A0A" opacity="0.35"/>
+            <polygon points="34,68 52,68 43,79" fill="#FFFFFF" opacity="0.15"/>
+            <polygon points="52,68 70,68 61,79" fill="#1A1A0A" opacity="0.35"/>
+            <polygon points="70,68 88,68 79,79" fill="#FFFFFF" opacity="0.15"/>
+            <path d="M18 48 Q6 58 4 88 Q11 80 18 65 Q18 56 24 51Z" fill="#C8960B"/>
+            <path d="M82 48 Q94 58 96 88 Q89 80 82 65 Q82 56 76 51Z" fill="#C8960B"/>
+            <ellipse cx="36" cy="130" rx="9" ry="4" fill="#2A1A0A"/>
+            <ellipse cx="64" cy="130" rx="9" ry="4" fill="#2A1A0A"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-code">E01</div>
+          <div class="card-name">Ensemble Bogolan</div>
+          <div class="card-px">Prix : <b>65€</b></div>
+          <div class="tailles">
+            <div class="t" id="e01-s" onclick="event.stopPropagation();pickT('S','E01')">S</div>
+            <div class="t" id="e01-m" onclick="event.stopPropagation();pickT('M','E01')">M</div>
+            <div class="t" id="e01-l" onclick="event.stopPropagation();pickT('L','E01')">L</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="m-e02" onclick="pickModel('E02','Kimono Bicolore','45')">
+        <div class="card-fig">
+          <svg viewBox="0 0 100 140" width="85" height="119">
+            <ellipse cx="50" cy="22" rx="15" ry="18" fill="#9A7055"/>
+            <ellipse cx="50" cy="15" rx="15" ry="9" fill="#DEB887"/>
+            <rect x="43" y="38" width="14" height="12" fill="#9A7055"/>
+            <path d="M8 50 Q50 46 92 50 L94 128 Q50 132 6 128 Z" fill="#8CB8A2"/>
+            <rect x="8" y="58" width="3" height="68" fill="#1A1A0A" opacity="0.6"/>
+            <rect x="15" y="58" width="5" height="68" fill="#FFFFFF" opacity="0.25"/>
+            <rect x="24" y="58" width="3" height="68" fill="#1A1A0A" opacity="0.6"/>
+            <rect x="70" y="58" width="3" height="68" fill="#1A1A0A" opacity="0.6"/>
+            <rect x="77" y="58" width="5" height="68" fill="#FFFFFF" opacity="0.25"/>
+            <rect x="86" y="58" width="3" height="68" fill="#1A1A0A" opacity="0.6"/>
+            <rect x="6" y="118" width="88" height="7" fill="#5A9A7A"/>
+            <path d="M8 50 Q-2 65 -2 96 Q6 88 12 70 Q10 60 16 53Z" fill="#8CB8A2"/>
+            <path d="M92 50 Q102 65 102 96 Q94 88 88 70 Q90 60 84 53Z" fill="#8CB8A2"/>
+            <ellipse cx="38" cy="130" rx="9" ry="4" fill="#2A1A0A"/>
+            <ellipse cx="62" cy="130" rx="9" ry="4" fill="#2A1A0A"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-code">E02</div>
+          <div class="card-name">Kimono Bicolore</div>
+          <div class="card-px">Prix : <b>45€</b></div>
+          <div class="tailles">
+            <div class="t" id="e02-s" onclick="event.stopPropagation();pickT('S','E02')">S</div>
+            <div class="t" id="e02-m" onclick="event.stopPropagation();pickT('M','E02')">M</div>
+            <div class="t" id="e02-l" onclick="event.stopPropagation();pickT('L','E02')">L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sec-label">2. Choisissez votre tissu</div>
+    <div class="chips">
+      <div class="chip" onclick="pickChip(this)">T01 — Bogolan N&B</div>
+      <div class="chip" onclick="pickChip(this)">T02 — Basin Rayures</div>
+      <div class="chip" onclick="pickChip(this)">T03 — Bazin Bicolore</div>
+      <div class="chip" onclick="pickChip(this)">T04 — Wax Moutarde</div>
+      <div class="chip" onclick="pickChip(this)">T05 — Wax Marine</div>
+      <div class="chip" onclick="pickChip(this)">T06 — Kente N&B</div>
+      <div class="chip" onclick="pickChip(this)">T07 — Basin Vert Or</div>
+    </div>
+    <div class="err" id="err1">Veuillez sélectionner un modèle, une taille et un tissu pour continuer.</div>
+    <button class="btn-main" onclick="next1()">Continuer — Mes coordonnées</button>
+  </div>
+</div>
+
+<div id="pg2" style="display:none">
+  <div class="sec">
+    <div class="recap-box">
+      <div class="recap-label">Récapitulatif</div>
+      <div class="recap-val" id="recap-txt"></div>
+    </div>
+    <div class="field"><label>Prénom <span class="req">*</span></label><input id="prenom" type="text" placeholder="Votre prénom"/></div>
+    <div class="field"><label>Nom <span class="req">*</span></label><input id="nom" type="text" placeholder="Votre nom"/></div>
+    <div class="field"><label>Ville <span class="req">*</span></label><input id="ville" type="text" placeholder="Votre ville"/></div>
+    <div class="field"><label>Téléphone WhatsApp <span class="req">*</span></label><input id="tel" type="tel" placeholder="+33 6 XX XX XX XX"/></div>
+    <div class="field"><label>Instagram (optionnel)</label><input id="insta" type="text" placeholder="@votre_compte"/></div>
+    <div class="note-txt">Après validation, un conseiller Deux Elles vous contactera sous <strong>24h</strong> sur WhatsApp pour confirmer votre commande et organiser le paiement.</div>
+    <div class="err" id="err2">Veuillez remplir tous les champs obligatoires.</div>
+    <button class="btn-main" onclick="next2()">Valider ma commande</button>
+    <button class="btn-back" onclick="back1()">← Modifier mon choix</button>
+  </div>
+</div>
+
+<div id="pgconf" style="display:none">
+  <div class="sec">
+    <div class="confirm-box">
+      <div class="conf-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12l5 5L20 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="conf-title">Commande reçue</div>
+      <div class="conf-name" id="cname"></div>
+      <div class="conf-txt">Un conseiller <strong>Deux Elles</strong> vous contactera sous <strong>24h</strong> sur WhatsApp pour finaliser votre commande et organiser le paiement.</div>
+      <div class="conf-detail" id="cdetail"></div>
+      <div class="conf-sep">
+        <div class="conf-insta-label">Suivez-nous</div>
+        <div class="conf-insta">@deuxelles.officiel</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">Deux Elles</div>
+  <div class="footer-sub">Maison de mode · Paris × Dakar</div>
+</div>
+</div>
+
+<script>
+var sel={model:'',name:'',price:'',taille:'',tissu:''};
+function pickModel(code,name,price){
+  ['e01','e02'].forEach(function(id){document.getElementById('m-'+id).classList.remove('on')});
+  document.getElementById('m-'+code.toLowerCase()).classList.add('on');
+  sel.model=code;sel.name=name;sel.price=price;
+  ['e01','e02'].forEach(function(m){['s','m','l'].forEach(function(t){document.getElementById(m+'-'+t).classList.remove('on')})});
+  sel.taille='';
+}
+function pickT(t,model){
+  var m=model.toLowerCase();
+  ['s','m','l'].forEach(function(id){document.getElementById(m+'-'+id).classList.remove('on')});
+  document.getElementById(m+'-'+t.toLowerCase()).classList.add('on');
+  sel.taille=t;
+  if(!sel.model)pickModel(model,model==='E01'?'Ensemble Bogolan':'Kimono Bicolore',model==='E01'?'65':'45');
+}
+function pickChip(el){
+  document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on')});
+  el.classList.add('on');
+  sel.tissu=el.textContent.trim();
+}
+function next1(){
+  var e=document.getElementById('err1');
+  if(!sel.model||!sel.taille||!sel.tissu){e.style.display='block';return;}
+  e.style.display='none';
+  document.getElementById('pg1').style.display='none';
+  document.getElementById('pg2').style.display='block';
+  document.getElementById('recap-txt').textContent=sel.model+' — '+sel.name+' · '+sel.tissu+' · Taille '+sel.taille+' · '+sel.price+'€';
+  document.getElementById('d1').className='dot done';
+  document.getElementById('d2').className='dot on';
+  window.scrollTo(0,0);
+}
+function back1(){
+  document.getElementById('pg2').style.display='none';
+  document.getElementById('pg1').style.display='block';
+  document.getElementById('d2').className='dot';
+  document.getElementById('d1').className='dot on';
+  window.scrollTo(0,0);
+}
+function next2(){
+  var p=document.getElementById('prenom').value.trim();
+  var n=document.getElementById('nom').value.trim();
+  var v=document.getElementById('ville').value.trim();
+  var t=document.getElementById('tel').value.trim();
+  var e=document.getElementById('err2');
+  if(!p||!n||!v||!t){e.style.display='block';return;}
+  e.style.display='none';
+  document.getElementById('pg2').style.display='none';
+  document.getElementById('pgconf').style.display='block';
+  document.getElementById('cname').textContent=p+' '+n;
+  document.getElementById('cdetail').textContent=sel.model+' · '+sel.tissu+' · Taille '+sel.taille+' · '+sel.price+'€ · '+v;
+  document.getElementById('d2').className='dot done';
+  document.getElementById('d3').className='dot on';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
